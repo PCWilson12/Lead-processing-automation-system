@@ -13,7 +13,7 @@ Production-grade automation system for processing, enriching, and routing inboun
 - Orchestration: n8n workflows  
 - CRM: Salesforce  
 - Data Processing: JavaScript logic  
-- External APIs: Data enrichment services
+- External APIs: Data enrichment services (Clay)
 
 - ## Key Features
 
