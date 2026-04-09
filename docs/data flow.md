@@ -6,7 +6,7 @@ The lead processing pipeline orchestrates how incoming lead data is validated, e
 - Lead data is received from Salesforce as the system of record.
 - The workflow is triggered by lead creation or update events.
 
-  ![Workflow Trigger](./images/workflow-trigger.png)
+  ![Workflow Trigger](../images/workflow-trigger.png)
 ---
 
 ### 2. Contact Matching
@@ -17,12 +17,12 @@ The system attempts to associate the incoming lead with an existing contact:
 - Check if a contact exists with the same email address.
 - If found → use the existing contact.
 
-  ![Exact Contact Matching](./images/check-for-matching-contact.png)
+  ![Exact Contact Matching](../images/check-for-matching-contact.png)
 
 #### Fuzzy Name Matching
 - If no email match is found, apply Jaro-Winkler similarity to compare the lead’s name against existing contacts.
 - If a high-confidence match is found → use the matched contact.
-![Fuzzy Name Matching](./images/fuzzy-contact-matching.png)
+![Fuzzy Name Matching](../images/fuzzy-contact-matching.png)
 ---
 
 ### 3. Account Matching
@@ -34,7 +34,7 @@ If no contact is identified, the system attempts to find a matching account:
 - Use Jaro-Winkler similarity to compare against existing account domains.
 - If a match is found → select the corresponding account.
 
-  ![Fuzzy Account Matching](./images/fuzzy-account-matching.png)
+  ![Fuzzy Account Matching](../images/fuzzy-account-matching.png)
 
 #### Account Creation via Enrichment
 - If no account match is found:
@@ -42,7 +42,7 @@ If no contact is identified, the system attempts to find a matching account:
   - Create:
     - A new account
     - A new contact associated with that account
-      ![Create Net New](./images/net-new.png)
+      ![Create Net New](../images/net-new.png)
 
 ---
 
@@ -51,7 +51,7 @@ If no contact is identified, the system attempts to find a matching account:
 If an account is identified but no contact exists:
 - Create a new contact using lead data.
 - Associate the contact with the matched account.
-  ![Get Account Owner](./images/get-account-owner.png)
+  ![Get Account Owner](../images/get-account-owner.png)
 
 ---
 
@@ -74,7 +74,7 @@ If reassignment is required:
   - Territory alignment
   - ICP qualification
  
-    ![Assign Sales Rep](./images/round-robin.png)
+    ![Assign Sales Rep](../images/round-robin.png)
 
 ---
 
@@ -95,7 +95,7 @@ If reassignment is required:
   - New account creation
   - Conversion confirmation
  
-    ![Convert Lead and Message Salesforce Users](./images/convert-lead-slack-alert.png)
+    ![Convert Lead and Message Salesforce Users](../images/convert-lead-slack-alert.png)
 
 ---
 
