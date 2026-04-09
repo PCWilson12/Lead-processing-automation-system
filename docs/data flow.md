@@ -6,7 +6,7 @@ The lead processing pipeline orchestrates how incoming lead data is validated, e
 - Lead data is received from Salesforce as the system of record.
 - The workflow is triggered by lead creation or update events.
 
-- ![Workflow Trigger](.images/Workflow Triggers & Data Validation.png)
+- ![Workflow Trigger](./images/Workflow Triggers & Data Validation.png)
 
 ---
 
